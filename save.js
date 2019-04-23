@@ -1,6 +1,6 @@
 function save() {
 	localStorage.setItem(btoa('universe_creation'), JSON.stringify(player, function(k, v) { return (v === Infinity) ? "Infinity" : v; }));
-	get("saveButton").innerHTML = "Saved!";
+	get("saveButton").innerHTML = "已保存！";
 	setTimeout(changeSaveButton, 5000);
 }
 function load() {
@@ -9,7 +9,7 @@ function load() {
 	player = save;
 }
 function reset() {
-	if (confirm("Are you sure? This will reset EVERYTHING!")) {
+	if (confirm("你肯定嗎？這樣會重置全部！")) {
 		player = getDefaultSave();
 		save();
 	}
@@ -43,7 +43,7 @@ function exp() {
 	output.select()
 	try {
 		if (document.execCommand('copy')) {
-			get("exportButton").innerHTML = "Copied to clipboard";
+			get("exportButton").innerHTML = "複製到剪貼板";
 			output.blur();
 			setTimeout(changeExport, 5000);
 		}
@@ -52,13 +52,13 @@ function exp() {
 	}
 }
 function changeExport() {
-	get("exportButton").innerHTML = "Export";
+	get("exportButton").innerHTML = "導出";
 }
 function changeSaveButton() {
-	get("saveButton").innerHTML = "Save";
+	get("saveButton").innerHTML = "保存";
 }
 function imp() {
-	var saveData = prompt("Input your save. Your current save file will be overwritten!");
+	var saveData = prompt("輸入你的存檔。你現在的存檔會被覆蓋！");
 	saveData = atob(saveData);
 	localStorage.setItem(btoa('universe_creation'), saveData);
 	load();
