@@ -229,7 +229,85 @@
 			<p>你擁有<span id="space">0</span>空間</p>
 			<p>流形: <span id="manifolds">0</span></p>
 			<button id="buyManifold" onclick="buyManifold()" align="right">購買流形，獲得一個思想者的倍數<br/>成本: <span id="manifoldCost">1</span>空間</button>
-			
+		</div>
+		<div id="upgradeTree" class="tab" style="display: none">
+			<button id="treeUpgradesSubtab" onclick="showSubtab('treeUpgrades','upgradeTree')" class="storebtn">Upgrades</button>
+			<button id="autobuyersSubtab" onclick="showSubtab('autobuyers','upgradeTree')" style="display: none" class="storebtn">Autobuyers</button>
+			<div id="treeUpgrades" class="subtab">
+				<canvas id="treeCanvas"></canvas>
+	            <table id="upgradeTable" style="display: flex; justify-content: center">
+	                <tr>
+	                    <td><button class="upgradebtn creationbtn" id="st11" onclick="buyTreeUpgrade('t11')">Manifolds affect creators at a reduced rate.<br/>Cost: 100 space</button></td>
+	                </tr>
+	            </table>
+	            <table id="upgradeTable" style="display: flex; justify-content: center">
+	                <tr>
+	                    <td><button class="treebtn creationbtn" id="st21" onclick="buyTreeUpgrade('t21')">Manifold cost scaling is 1.5 times weaker<br/>Cost: 1e8 space</button></td>
+	                	<td><button class="treebtn creationbtn" id="st22" onclick="buyTreeUpgrade('t22')">Manifolds are raised to the power of 1.5<br/>Cost: 1e8 space</button></td>
+	                </tr>
+	            </table>
+	            <table id="upgradeTable" style="display: flex; justify-content: center">
+	                <tr>
+	                    <td><button class="upgradebtn creationbtn" id="st31" onclick="buyTreeUpgrade('t31')">
+	                    Unlock autobuyers, and have all existence upgrades unlocked at the start of each abstract<br/>Cost: 1e33 space</button></td>
+	                </tr>
+	            </table>
+	        </div>
+	        <div id="autobuyers" style="display: none" class="subtab">
+				<table>
+					<tr id="thinkersAuto">
+						<td>
+							Thinker autobuyers
+						</td>
+						<td>
+							<button id="toggleAuto1" onclick="toggleAuto(1)" align="right">Tier 1</button>
+						</td>
+						<td>
+							<button id="toggleAuto2" onclick="toggleAuto(2)" align="right">Tier 2</button>
+						</td>
+						<td>
+							<button id="toggleAuto3" onclick="toggleAuto(3)" align="right">Tier 3</button>
+						</td>
+						<td>
+							<button id="toggleAuto4" onclick="toggleAuto(4)" align="right">Tier 4</button>
+						</td>
+						<td>
+							<button id="toggleAuto5" onclick="toggleAuto(5)" align="right">Tier 5</button>
+						</td>
+						<td>
+							<button id="toggleAuto6" onclick="toggleAuto(6)" align="right">Tier 6</button>
+						</td>
+						<td>
+							<button id="toggleAuto7" onclick="toggleAuto(7)" align="right">Tier 7</button>
+						</td>
+						<td>
+							<button id="toggleAuto8" onclick="toggleAuto(8)" align="right">Tier 8</button>
+						</td>
+					</tr>
+					<tr id="thinkersAuto">
+						<td>
+							Creator autobuyers
+						</td>
+						<td>
+							<button id="toggleAutoC1" onclick="toggleAutoC(1)" align="right">Tier 1</button>
+						</td>
+						<td>
+							<button id="toggleAutoC2" onclick="toggleAutoC(2)" align="right">Tier 2</button>
+						</td>
+						<td>
+							<button id="toggleAutoC3" onclick="toggleAutoC(3)" align="right">Tier 3</button>
+						</td>
+						<td>
+							<button id="toggleAutoC4" onclick="toggleAutoC(4)" align="right">Tier 4</button>
+						</td>
+					</tr>
+					<tr id="Existence mult auto">
+						<td>
+							<button id="toggleAutoEm" onclick="toggleAutoEm()" align="right">Existence Mult Autobuyer</button>
+						</td>
+					</tr>
+				</table>
+	        </div>
 		</div>
 		<div id="settings" class="tab" style="display: none">
 			<button id="saveButton" onclick="save()" class="storebtn">保存</button>
